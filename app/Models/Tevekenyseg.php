@@ -17,7 +17,7 @@ class Tevekenyseg extends Model
     ];
 
     public function kategoria(){
-        return $this->belongsTo(Kategoria::class,'id');
+        return $this->belongsTo(Kategoria::class,'kat_id','id');//ez fontos!!!!!!!!!!!!
     }
 
 }

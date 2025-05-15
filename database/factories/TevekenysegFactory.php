@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Kategoria;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -16,8 +17,11 @@ class TevekenysegFactory extends Factory
      */
     public function definition(): array
     {
+        $arrayValues = ['kész','nincs kész'];
         return [
-            //
+            'kat_id'=>Kategoria::all()->random()->id,
+            'tev_nev'=>fake()->sentence(2),
+            'allapot'=>$arrayValues[rand(0,1)]
         ];
     }
 }
