@@ -13,7 +13,8 @@ class KategoriaController extends Controller
      */
     public function index()
     {
-        //
+        $record = Kategoria::with('tevekenyseg')->get();
+        return response()->json($record);
     }
 
     /**

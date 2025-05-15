@@ -17,8 +17,7 @@ class TevekenysegController extends Controller
      */
     public function index()
     {
-        $tevekenysegek = Tevekenyseg::with('kategoria:id,katnev')->get();
-        return response()->json($tevekenysegek);
+        
     }
 
     /**
@@ -27,7 +26,7 @@ class TevekenysegController extends Controller
     public function store(Request $request)
     {
         $tevekenyseg = new Tevekenyseg();
-        $tevekenyseg->fill($request->all());
+        $tevekenyseg->tev_nev = $request->tev_nev;
         $tevekenyseg->save();
 
         return response()->json([
